@@ -12,11 +12,12 @@
 #   <optional notes required for the script>
 #
 # Author:
-#   TAKAHASHI Kazunari[@<org>]
-
+#   TAKAHASHI Kazunari[takahashi@1syo.net]
 module.exports = (robot) ->
-  robot.respond /hello/, (msg) ->
-    msg.reply "hello!"
-
-  robot.hear /orly/, ->
-    msg.send "yarly"
+  robot.router.post "/#{robot.name}/travisci/:room", (req, res) ->
+    try
+      postman = Postman.create(req, robot)
+      postman.deliver()
+      res.end "[TravisCI] Sending message"
+    catch e
+      res.end "[Travis-CI] #{e}"
