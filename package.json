@@ -21,6 +21,9 @@
   },
 
   "devDependencies": {
+    "supertest": "*",
+    "hubot": "*",
+    "hubot-mock-adapter": "*",
     "mocha": "*",
     "chai": "*",
     "sinon-chai": "*",

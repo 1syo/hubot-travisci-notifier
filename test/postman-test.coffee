@@ -13,8 +13,8 @@ describe 'Postman', ->
     @req =
       body:
         payload: JSON.stringify(valid_json)
-      _parsedUrl:
-        query: "room=general"
+      params:
+        room: "general"
 
   describe 'Common', ->
     beforeEach ->

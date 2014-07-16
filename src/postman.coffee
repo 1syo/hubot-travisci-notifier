@@ -1,13 +1,10 @@
-querystring = require('querystring')
-
 class Base
-  constructor: (req, robot) ->
-    @query = querystring.parse(req._parsedUrl.query)
+  constructor: (req, @robot) ->
+    @_room = req.params.room
     @json = JSON.parse(req.body.payload)
-    @robot = robot
 
   room: ->
-    @query.room || ""
+    @_room || ""
 
   repository: ->
     "#{@json["repository"]["owner_name"]}/#{@json["repository"]["name"]}@#{@json["branch"]}"
@@ -69,6 +66,7 @@ class Slack extends Base
 
   deliver: ->
     @robot.emit 'slack-attachment', this.payload()
+
 
 class Postman
   @create: (req, robot) ->

@@ -13,11 +13,12 @@
 #
 # Author:
 #   TAKAHASHI Kazunari[takahashi@1syo.net]
+Postman = require "./postman"
 module.exports = (robot) ->
   robot.router.post "/#{robot.name}/travisci/:room", (req, res) ->
     try
       postman = Postman.create(req, robot)
       postman.deliver()
-      res.end "[TravisCI] Sending message"
+      res.end "[Travis CI] Sending message"
     catch e
-      res.end "[Travis-CI] #{e}"
+      res.end "[Travis CI] #{e}"
