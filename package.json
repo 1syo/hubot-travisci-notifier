@@ -9,11 +9,11 @@
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-travisci-notification.git"
+    "url": "git://github.com/1syo/hubot-travisci-notification.git"
   },
 
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-travisci-notification/issues"
+    "url": "https://github.com/1syo/hubot-travisci-notification/issues"
   },
 
   "dependencies": {
@@ -21,14 +21,22 @@
   },
 
   "devDependencies": {
+    "supertest": "*",
+    "hubot": "*",
+    "hubot-mock-adapter": "*",
     "mocha": "*",
     "chai": "*",
     "sinon-chai": "*",
     "sinon": "*",
-    "grunt-mocha-test": "~0.7.0",
-    "grunt-release": "~0.6.0",
-    "matchdep": "~0.1.2",
-    "grunt-contrib-watch": "~0.5.3"
+    "grunt-mocha-test": "*",
+    "grunt-release": "*",
+    "matchdep": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-coffeelint": "*",
+    "mocha-lcov-reporter": "*",
+    "blanket": "*",
+    "coveralls": "*",
+    "grunt-coveralls": "*"
   },
 
   "main": "index.coffee",
