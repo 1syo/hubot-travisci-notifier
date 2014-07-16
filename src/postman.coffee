@@ -1,3 +1,6 @@
+# Description
+#   A hubot script that does the things
+#
 class Base
   constructor: (req, @robot) ->
     @_room = req.params.room

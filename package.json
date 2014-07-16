@@ -9,11 +9,11 @@
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-travisci-notification.git"
+    "url": "git://github.com/1syo/hubot-travisci-notification.git"
   },
 
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-travisci-notification/issues"
+    "url": "https://github.com/1syo/hubot-travisci-notification/issues"
   },
 
   "dependencies": {
@@ -32,7 +32,11 @@
     "grunt-release": "*",
     "matchdep": "*",
     "grunt-contrib-watch": "*",
-    "grunt-coffeelint": "*"
+    "grunt-coffeelint": "*",
+    "mocha-lcov-reporter": "*",
+    "blanket": "*",
+    "coveralls": "*",
+    "grunt-coveralls": "*"
   },
 
   "main": "index.coffee",

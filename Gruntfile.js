@@ -11,9 +11,17 @@ module.exports = function(grunt) {
       test: {
         options: {
           reporter: 'spec',
-          require: 'coffee-script'
+          require: ['coffee-script', 'test/blanket']
         },
-        src: ['test/**/*.coffee']
+        src: ['test/**/*-test.coffee']
+      },
+      coverage: {
+        options: {
+          reporter: "mocha-lcov-reporter",
+          quiet: true,
+          captureFile: "coverage/lcov.info"
+        },
+        src: ["test/**/*-test.coffee"]
       }
     },
     release: {
@@ -30,6 +38,11 @@ module.exports = function(grunt) {
       app: ['src/*.coffee', 'test/*.coffee'],
       options: {
         configFile: 'coffeelint.json'
+      }
+    },
+    coveralls: {
+      all: {
+        src: "coverage/lcov.info"
       }
     }
   });
