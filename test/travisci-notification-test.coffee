@@ -37,7 +37,7 @@ describe 'travisci-notification', ->
       .send(payload: JSON.stringify(invalid_json))
       .expect(200)
       .end (err, res) ->
-        expect(res.text).to.eq "[Travis CI] TypeError: Cannot call method 'toLowerCase' of undefined"
+        expect(res.text).match /\[Travis CI\] TypeError: Cannot .+ 'toLowerCase' of undefined/
         throw err if err
         done()
 
