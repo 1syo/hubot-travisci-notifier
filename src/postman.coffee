@@ -6,28 +6,28 @@ class Base
     @json = JSON.parse(req.body.payload)
     @robot = robot
 
-  room = ->
+  room: ->
     @query.room || ""
 
-  repository = ->
+  repository: ->
     "#{@json["repository"]["owner_name"]}/#{@json["repository"]["name"]}@#{@json["branch"]}"
 
-  number = ->
+  number: ->
     @json["number"]
 
-  author_name = ->
+  author_name: ->
     @json["author_name"]
 
-  commit = ->
+  commit: ->
     @json["commit"].substr(0, 7)
 
-  build_url = ->
+  build_url: ->
     @json["build_url"]
 
-  compare_url = ->
+  compare_url: ->
     @json["compare_url"]
 
-  step = ->
+  step: ->
     switch @json["status_message"]
       when "Pending"
         "Build started"
@@ -36,10 +36,17 @@ class Base
 
 
 class Common extends Base
+  text: ->
+    """
+      [Travis CI] #{this.step()} \##{this.number()} (#{this.commit()}) of #{this.repository()} by #{this.author_name()}
+      #{this.build_url()}
+    """
 
+  deliver: ->
+    @robot.send {room: this.room()}, this.text()
 
 class Slack extends Base
-  color = ->
+  color: ->
     switch @json["status_message"]
       when "Passed", "Fixed"
         "good"
@@ -48,18 +55,20 @@ class Slack extends Base
       else
         "#E3E4E6"
 
-  text = ->
-    "#{step.call(@)} #{build_url.call(@)}|\##{number.call(@)} (#{compare_url.call(@)}|#{commit.call(@)}) of #{repository.call(@)} by #{author_name.call(@)}"
+  text: ->
+    "[Travis CI] #{this.step()} #{this.build_url()}|\##{this.number()} (#{this.compare_url()}|#{this.commit()}) of #{this.repository()} by #{this.author_name()}"
 
   payload: ->
     message:
-      room: room.call(@)
+      room: this.room()
     content:
-      text: text.call(@)
-      color: color.call(@)
-      fallback: text.call(@)
+      text: this.text()
+      color: this.color()
+      fallback: this.text()
       pretext: ""
 
+  deliver: ->
+    @robot.emit 'slack-attachment', this.payload()
 
 class Postman
   @create: (req, robot) ->
