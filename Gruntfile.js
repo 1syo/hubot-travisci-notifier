@@ -4,6 +4,7 @@ module.exports = function(grunt) {
 
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-release');
+  grunt.loadNpmTasks('grunt-coffeelint');
 
   grunt.initConfig({
     mochaTest: {
@@ -24,6 +25,12 @@ module.exports = function(grunt) {
     watch: {
       files: ['Gruntfile.js', 'test/**/*.coffee'],
       tasks: ['test']
+    },
+    coffeelint: {
+      app: ['src/*.coffee', 'test/*.coffee'],
+      options: {
+        configFile: 'coffeelint.json'
+      }
     }
   });
 
