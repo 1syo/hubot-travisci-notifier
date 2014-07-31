@@ -1,15 +1,20 @@
 # Description
-#   A hubot script that does the things
+#   A hubot script that notify about build results in Travis CI
+#
+# Dependencies:
+#   None
 #
 # Configuration:
-#   LIST_OF_ENV_VARS_TO_SET
+#   None
 #
 # Commands:
-#   hubot hello - <what the respond trigger does>
-#   orly - <what the hear trigger does>
+#   None
+#
+# URLS:
+#   POST /<hubot>/travisci/<room>
 #
 # Notes:
-#   <optional notes required for the script>
+#  http://docs.travis-ci.com/user/notifications/#Webhook-notification
 #
 # Author:
 #   TAKAHASHI Kazunari[takahashi@1syo.net]

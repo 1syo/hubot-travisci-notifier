@@ -3,9 +3,7 @@ sinon = require 'sinon'
 chai.use require 'sinon-chai'
 expect = chai.expect
 
-process.env.HUBOT_AIRBRAKE_SUBDOMAIN = "test"
 Postman = require '../src/postman'
-
 valid_json = require './fixtures/valid.json'
 
 describe 'Postman', ->
@@ -45,10 +43,10 @@ describe 'Postman', ->
     it '#compare_url', ->
       expect(@postman.compare_url()).to.eq "https://github.com/svenfuchs/minimal/compare/master...develop"
 
-    it '#text', ->
-      expect(@postman.text()).to.eq """
+    it '#message', ->
+      expect(@postman.message()).to.eq """
         [Travis CI] Build passed #1 (62aae5f) of svenfuchs/minimal@master by Sven Fuchs
-        https://travis-ci.org/svenfuchs/minimal/builds/1
+        » https://travis-ci.org/svenfuchs/minimal/builds/1
       """
 
     it '#step', ->
@@ -57,7 +55,7 @@ describe 'Postman', ->
     it "#deliver", ->
       @postman.deliver()
       expect(@robot.send).to.have.been.calledWith(
-        {room: @postman.room()}, @postman.text()
+        {room: @postman.room()}, @postman.message()
       )
 
   describe 'Slack', ->
@@ -77,6 +75,7 @@ describe 'Postman', ->
       expect(@postman.payload().message["room"]).to.eq "general"
       expect(@postman.payload().content["text"]).to.eq @postman.text()
       expect(@postman.payload().content["color"]).to.eq "good"
+      expect(@postman.payload().content["fallback"]).to.eq @postman.message()
 
     it "#deliver", ->
       @postman.deliver()
