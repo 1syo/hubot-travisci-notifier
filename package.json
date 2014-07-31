@@ -5,7 +5,7 @@
   "author": "TAKAHASHI Kazunari <takahashi@1syo.net>",
   "license": "MIT",
 
-  "keywords": ["hubot","hubot-scripts"],
+  "keywords": ["hubot","hubot-scripts", "travisci"],
 
   "repository": {
     "type": "git",
