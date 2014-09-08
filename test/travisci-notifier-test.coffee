@@ -9,12 +9,12 @@ request = require 'supertest'
 valid_json = require './fixtures/valid.json'
 invalid_json = require './fixtures/invalid.json'
 
-describe 'travisci-notification', ->
+describe 'travisci-notifier', ->
   robot = null
   beforeEach (done) ->
     robot = new Robot null, 'mock-adapter', yes, 'hubot'
     robot.adapter.on 'connected', ->
-      require("../src/travisci-notification")(robot)
+      require("../src/travisci-notifier")(robot)
       adapter = @robot.adapter
       done()
     robot.run()

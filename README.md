@@ -1,26 +1,40 @@
-# hubot-travisci-notification
-[![Build Status](http://img.shields.io/travis/1syo/hubot-travisci-notification.svg?style=flat)](https://travis-ci.org/1syo/hubot-travisci-notification)
-[![Coverage Status](http://img.shields.io/coveralls/1syo/hubot-travisci-notification.svg?style=flat)](https://coveralls.io/r/1syo/hubot-travisci-notification)
-[![Dependencies Status](http://img.shields.io/david/1syo/hubot-travisci-notification.svg?style=flat)](https://david-dm.org/1syo/hubot-travisci-notification)
+# hubot-travisci-notifier
+[![Coverage Status](http://img.shields.io/coveralls/1syo/hubot-travisci-notifier.svg?style=flat)](https://coveralls.io/r/1syo/hubot-travisci-notifier)
+[![Dependencies Status](http://img.shields.io/david/1syo/hubot-travisci-notifier.svg?style=flat)](https://david-dm.org/1syo/hubot-travisci-notifier)
 
 A hubot script that notify about build results in Travis CI
 
-See [`src/travisci-notification.coffee`](src/travisci-notification.coffee) for full documentation.
+See [`src/travisci-notifier.coffee`](src/travisci-notifier.coffee) for full documentation.
 
 ## Installation
 
-Add **hubot-travisci-notification** to your package.json:
+In hubot project repo, run:
+
+`npm install git://github.com/1syo/hubot-travisci-notifier.git --save`
+
+Then add **hubot-jenkins-notifier** to your `external-scripts.json`:
 
 ```json
-{
-  "dependencies": {
-    "hubot-travisci-notification": "1syo/hubot-travisci-notification"
-  }
-}
+["hubot-travisci-notifier"]
 ```
 
-Then add **hubot-travisci-notification** to your `external-scripts.json`:
+## Travis CI configuration
 
-```json
-["hubot-travisci-notification"]
-```
+
+See also:  
+
+## Notification examples
+
+If you use slack adapter then your message use Slack attachments.
+
+### Slack Adapter
+
+...
+
+### Slack Adapter (fallback)
+
+...
+
+### Shell Adapter
+
+...

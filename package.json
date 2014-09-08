@@ -1,7 +1,7 @@
 {
-  "name": "hubot-travisci-notification",
+  "name": "hubot-travisci-notifier",
   "description": "A hubot script that notify about build results in Travis CI",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "author": "TAKAHASHI Kazunari <takahashi@1syo.net>",
   "license": "MIT",
 
@@ -9,11 +9,11 @@
 
   "repository": {
     "type": "git",
-    "url": "git://github.com/1syo/hubot-travisci-notification.git"
+    "url": "git://github.com/1syo/hubot-travisci-notifier.git"
   },
 
   "bugs": {
-    "url": "https://github.com/1syo/hubot-travisci-notification/issues"
+    "url": "https://github.com/1syo/hubot-travisci-notifier/issues"
   },
 
   "dependencies": {
