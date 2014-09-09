@@ -34,7 +34,7 @@ http://docs.travis-ci.com/user/notifications/#Webhook-notification
 
 ## Notification examples
 
-If you use slack adapter then your message use Slack attachments.
+If you use slack adapter then your notice use Slack attachments.
 
 ### Slack Adapter
 

@@ -11,7 +11,7 @@
 #   None
 #
 # URLS:
-#   POST /<hubot>/travisci/<room>
+#   POST /<hubot url>:<hubot port>/travisci/<room>
 #
 # Notes:
 #  http://docs.travis-ci.com/user/notifications/#Webhook-notification
@@ -23,7 +23,7 @@ module.exports = (robot) ->
   robot.router.post "/#{robot.name}/travisci/:room", (req, res) ->
     try
       postman = Postman.create(req, robot)
-      postman.deliver()
+      postman.notify()
       res.end "[Travis CI] Sending message"
     catch e
       res.end "[Travis CI] #{e}"
