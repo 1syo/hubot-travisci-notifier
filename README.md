@@ -38,12 +38,12 @@ If you use slack adapter then your notice use Slack attachments.
 
 ### Slack Adapter
 
-...
+![](https://raw.githubusercontent.com/wiki/1syo/hubot-travisci-notifier/slack.png)
 
 ### Slack Adapter (fallback)
 
-...
+![](https://raw.githubusercontent.com/wiki/1syo/hubot-travisci-notifier/slack-fallback.png)
 
 ### Shell Adapter
 
-...
+![](https://raw.githubusercontent.com/wiki/1syo/hubot-travisci-notifier/shell.png)
