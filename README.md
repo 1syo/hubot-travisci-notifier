@@ -13,7 +13,7 @@ In hubot project repo, run:
 
 `npm install git://github.com/1syo/hubot-travisci-notifier.git --save`
 
-Then add **hubot-jenkins-notifier** to your `external-scripts.json`:
+Then add **hubot-travisci-notifier** to your `external-scripts.json`:
 
 ```json
 ["hubot-travisci-notifier"]

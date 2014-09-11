@@ -1,7 +1,7 @@
 {
   "name": "hubot-travisci-notifier",
   "description": "A hubot script that notify about build results in Travis CI",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "TAKAHASHI Kazunari <takahashi@1syo.net>",
   "license": "MIT",
 
