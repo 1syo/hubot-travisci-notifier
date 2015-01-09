@@ -3,7 +3,7 @@
 #
 class Base
   constructor: (@req, @robot) ->
-    @json = JSON.parse(@req.body.payload)
+    @json = @req.body
 
   room: ->
     @req.params.room || ""
