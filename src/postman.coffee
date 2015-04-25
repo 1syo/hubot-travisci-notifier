@@ -3,7 +3,7 @@
 #
 class Postman
   constructor: (@req, @robot) ->
-    @json = JSON.parse(@req.body.payload)
+    @json = JSON.parse(@req.body.payload) if @req.body? # FIXME
 
   room: ->
     @req.params.room || ""
