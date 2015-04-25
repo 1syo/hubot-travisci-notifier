@@ -22,7 +22,7 @@ Postman = require "./postman"
 module.exports = (robot) ->
   robot.router.post "/#{robot.name}/travisci/:room", (req, res) ->
     try
-      postman = Postman.create(req, robot)
+      postman = new Postman(req, robot)
       postman.notify()
       res.end "[Travis CI] Sending message"
     catch e
