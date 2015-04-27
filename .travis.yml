@@ -10,5 +10,6 @@ script:
 after_success:
   - grunt coveralls
 notifications:
+  email: false
   webhooks:
     secure: "amlDZWCsnzzGdsSswxZ80Pm2tc0rsTDkl7R0L4sEHph7+UajUzSOR8emdFF5mbSNH7zPwZhEOFPdgtEnw+sUBFF+0PIntL+iPvmIYdHdbtIX0e2tVOW1i3Tslacq0hbn7/YLdCTwNkYbnGi/mIEzDWsjgD3S1FQN1rEte9GxX1A="
