@@ -10,4 +10,4 @@ script:
   - grunt coveralls
 notifications:
   webhooks:
-    secure: "SC9pCYAPqeRwhccB4e+bifnTw5jtAyj8uLfZPOiDh23nnMzsb6RQfZqEp4mwURqlpPBsbTtpUWzR/ehGyev/gaG3qFomkRMDNvL14cewaHEv4VTtLIwkrTaQjBPGp4vkwfvOc+arxOVoPy7cqaAShXvADH1Ck0rveTySuRXZi9M="
+    secure: "amlDZWCsnzzGdsSswxZ80Pm2tc0rsTDkl7R0L4sEHph7+UajUzSOR8emdFF5mbSNH7zPwZhEOFPdgtEnw+sUBFF+0PIntL+iPvmIYdHdbtIX0e2tVOW1i3Tslacq0hbn7/YLdCTwNkYbnGi/mIEzDWsjgD3S1FQN1rEte9GxX1A="
