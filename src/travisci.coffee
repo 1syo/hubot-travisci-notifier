@@ -1,5 +1,5 @@
 # Description
-#   A Travisci map JSON to object.
+#   A Travisci convert to Object from JSON.
 #
 class Travisci
   constructor: (@body) ->

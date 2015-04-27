@@ -2,16 +2,22 @@
 #   A hubot script that notify about build results in Travis CI
 #
 # Dependencies:
-#   mustache
+#   mustache: 2.0.0
 #
 # Configuration:
-#   None
+#   Add your .travis.yml:
+#
+#   ```
+#   notifications:
+#     webhooks: <hubot host>:<hubot port>/<hubot name>/travisci/<room>
+#     on_start: true
+#   ```
+#
+#   See also:
+#   http://docs.travis-ci.com/user/notifications/#Webhook-notification
 #
 # Commands:
 #   None
-#
-# URLS:
-#   POST /<hubot url>:<hubot port>/travisci/<room>
 #
 # Notes:
 #  http://docs.travis-ci.com/user/notifications/#Webhook-notification

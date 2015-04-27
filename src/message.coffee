@@ -1,5 +1,5 @@
 # Description
-#   A Message build message with Mustache.
+#   A Message build message using Mustache.
 #
 Mustache = require 'mustache'
 
