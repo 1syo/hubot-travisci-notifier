@@ -3,7 +3,7 @@
 #
 class Travisci
   constructor: (@body) ->
-    @json = JSON.parse(@body.payload) if @body? # FIXME
+    @json = JSON.parse(@body.payload) if @body?.payload
 
   repository_owner_name: ->
     @json.repository.owner_name
