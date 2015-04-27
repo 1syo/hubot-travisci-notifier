@@ -1,9 +1,8 @@
 require("blanket") {
-  "data-cover-never": "node_modules"
   pattern: [
-      "travisci-notifier.coffee",
-      "travisci.coffee",
-      "message.coffee"
+      "hubot-travisci-notifier/src/travisci-notifier.coffee",
+      "hubot-travisci-notifier/src/travisci.coffee",
+      "hubot-travisci-notifier/src/message.coffee"
     ]
   loader: "./node-loaders/coffee-script"
 }
