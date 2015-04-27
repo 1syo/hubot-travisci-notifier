@@ -7,6 +7,7 @@ before_script:
 script:
   - grunt test
   - grunt coffeelint
+after_success:
   - grunt coveralls
 notifications:
   webhooks:
