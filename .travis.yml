@@ -1,0 +1,10 @@
+language: node_js
+node_js:
+  - '0.10'
+  - '0.12'
+script:
+  - npm run lint
+  - npm test
+notifications:
+  webhooks:
+    secure: "SC9pCYAPqeRwhccB4e+bifnTw5jtAyj8uLfZPOiDh23nnMzsb6RQfZqEp4mwURqlpPBsbTtpUWzR/ehGyev/gaG3qFomkRMDNvL14cewaHEv4VTtLIwkrTaQjBPGp4vkwfvOc+arxOVoPy7cqaAShXvADH1Ck0rveTySuRXZi9M="
