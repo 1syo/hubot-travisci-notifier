@@ -2,7 +2,7 @@
 #   A hubot script that notify about build results in Travis CI
 #
 # Dependencies:
-#   None
+#   mustache
 #
 # Configuration:
 #   None
@@ -18,12 +18,16 @@
 #
 # Author:
 #   TAKAHASHI Kazunari[takahashi@1syo.net]
-Postman = require "./postman"
+#
+Message = require "./message"
+Travisci = require "./travisci"
+
 module.exports = (robot) ->
   robot.router.post "/#{robot.name}/travisci/:room", (req, res) ->
     try
-      postman = new Postman(req, robot)
-      postman.notify()
+      message = new Message(new Travisci(req.body))
+      robot.send { room: req.params.room }, message.build()
+
       res.end "[Travis CI] Sending message"
     catch e
       res.end "[Travis CI] #{e}"
